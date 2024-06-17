@@ -6,4 +6,9 @@ module ShoutHelper
             button_to "Like", like_shout_path(shout), method: :post 
         end
     end
+
+    def autolink(text)
+        #mention will hold the text after @ (username)
+        text.gsub(/@\w+/){ |mention| link_to mention, user_path(mention[1..-1]) }.html_safe
+    end
 end
