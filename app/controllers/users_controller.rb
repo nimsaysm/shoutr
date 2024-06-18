@@ -1,12 +1,11 @@
 class UsersController < Clearance::UsersController
     def new
         @user = User.new
-        render template: "users/new"
     end
 
     def show
         @user = User.find_by(username: params[:id])
-        @shouts = @user.shouts
+        @timeline = Timeline.new([@user])
     end
     
     private
