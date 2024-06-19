@@ -5,7 +5,7 @@ class Timeline
     end
 
     def shouts
-        Shout.
+        scope.
             where(user_id: users).
             order(created_at: :desc)
     end
