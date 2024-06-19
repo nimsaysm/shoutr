@@ -10,7 +10,6 @@
   </head>
 
   <body>
-    <%= yield %>
     <div id="flash">
       <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
@@ -23,5 +22,9 @@
     <% else %>
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>
+
+    <%= render "search" %>
+
+    <%= yield %>
   </body>
 </html>
