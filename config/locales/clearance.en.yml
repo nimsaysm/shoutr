@@ -7,7 +7,7 @@ en:
   clearance_mailer:
     change_password:
       closing: If you didn't request this, ignore this email. Your password has
-        not been changed.
+        not been cha nged.
       link_text: Change my password
       opening: "Someone, hopefully you, requested we send you a link to change
         your password:"

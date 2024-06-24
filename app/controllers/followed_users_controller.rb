@@ -1,4 +1,9 @@
 class FollowedUsersController < ApplicationController
+    def index
+        @user = find_user
+        @followed_users = @user.followed_users
+    end
+    
     def create 
         user_to_follow = find_user
         current_user.follow(user_to_follow)

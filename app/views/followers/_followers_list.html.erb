@@ -1,0 +1,15 @@
+<div class="text-center">
+    <div class="d-grid">
+        <% @user.followers.each do |follower| %>
+            <div class="d-flex justify-content-center align-items-center m-3">
+                <%= avatar follower %>
+                <div class="mx-3">
+                    <a class="link-secondary">
+                        @<%= link_to follower.username, follower, class: "link-secondary" %>
+                    </a>
+                </div>
+            </div>
+        <% end %>    
+    </div>
+</div>
+

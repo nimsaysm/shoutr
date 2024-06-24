@@ -1,7 +1,12 @@
-<%= avatar @user %>
-<h1><%= @user.username %></h1>
+<div class="text-center">
+    <div class="m-5 d-flex justify-content-center align-items-center">
+        <%= avatar @user %>
+        <h1 class="mx-3">@<%= @user.username %></h1>
 
-<%= follow_button @user %> 
-<%= link_to "Followers", user_followers_path(@user) %>
+        <%= follow_button @user %> 
+        <%= link_to "Followers (#{@user.followers.count})", user_followers_path(@user), class:"btn btn-outline-dark m-1" %>
+        <%= link_to "Following (#{@user.followed_users.count})", followed_users_user_path(@user), class:"btn btn-outline-dark m-1" %>
+    </div>
+    <%= render @timeline %>
+</div>
 
-<%= render @timeline %>

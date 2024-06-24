@@ -1,15 +1,26 @@
-<div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
+<div class="container w-25">
+  <div id="clearance" class="sign-up d-grid mt-5 p-3 card bg-light">
+    <h2 class="mb-4"><%= t(".title") %></h2>
 
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
+    <%= form_for @user do |form| %>
+      <% if @user.errors.any? %>
+        <div class="alert alert-danger">
+            <% form.object.errors.full_messages.each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+        </div>
+      <% end %>
+      
+      <%= render partial: '/users/form', object: form %>
+      <div class="d-flex mt-5 justify-content-center">
+        <div class="submit-field">
+          <%= form.submit class: "btn btn-dark m-1" %>
+        </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
-    </div>
-  <% end %>
+        <div class="other-links">
+          <%= link_to t(".sign_in"), sign_in_path, class:"btn btn-outline-dark m-1" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

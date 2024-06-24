@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
     def show
-        render
+        @shouts = Shout.last(5).reverse
     end
 end

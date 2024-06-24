@@ -1,11 +1,26 @@
-<h1>Dashboard</h1>
+<div class="mt-3 ms-3 text-center">
+    <h1>Shoutr</h1>
 
-<%= shout_form_for(TextShout) do |form| %>
-    <%= form.text_field :body, placeholder: "Shout here!", required: true %>
-<% end %>
+    <div class="row m-5">
+        <div class="col-sm-6">
+            <div class="card h-100 p-2 justify-content-center">
+                <%= shout_form_for(TextShout) do |form| %>
+                <div class="card-body">
+                    <%= form.text_area :body, placeholder: "Shout here!", required: true, :rows => 3, :cols => 20 %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card h-100 p-2 justify-content-center">
+                <%= shout_form_for(PhotoShout) do |form| %>
+                <div class="card-body">          
+                    <%= form.file_field :image, required: true %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>    
 
-<%= shout_form_for(PhotoShout) do |form| %>
-    <%= form.file_field :image, required: true %>
-<% end %>
-
-<%= render @dashboard.timeline %>
+    <%= render @dashboard.timeline %>
+</div>

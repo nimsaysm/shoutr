@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     member do
       post "follow" => "followed_users#create"
       delete "unfollow" => "followed_users#destroy"
+      get "followed_users" => "followed_users#index"
     end
     resource :password,
       controller: "clearance/passwords",
