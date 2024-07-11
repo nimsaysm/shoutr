@@ -1,24 +1,12 @@
-# README
+# Scheduled Tweets
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Web application that allows you to create an account, follow other users, create shouts and like shouts. It is similar to Twitter.
 
-Things you may want to cover:
+This project was created at [Intermediate Ruby on Rails trail](https://thoughtbot.com/upcase/intermediate-ruby-on-rails-five).
 
-* Ruby version
 
-* System dependencies
+### Prerequisites
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [Ruby](https://www.ruby-lang.org/en/downloads/)
+- [Rails](https://rubyonrails.org/)
+- [Bundler](https://bundler.io/)
